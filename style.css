@@ -1,0 +1,206 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.nav .nama {
+  padding: 10px 20px;
+  color: bisque;
+  position: fixed;
+  z-index: 1001;
+  background-color: black;
+  width: 100%;
+}
+
+.nav .picit {
+  padding: 10px 20px;
+  color: bisque;
+  position: fixed;
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  justify-content: end;
+  align-items: end;
+  float: right;
+  width: 100%;
+}
+
+.nav .picit span {
+  padding: 1px 8px;
+  background-color: bisque;
+  margin: 2px;
+}
+
+.navbar {
+  display: none;
+}
+
+.navbar.active {
+  transition: 0.5s ease-in-out;
+  display: block;
+  position: fixed;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  padding-top: 50px;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px;
+  color: bisque;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: bisque;
+  color: black;
+  transition: 0.5s ease-in-out;
+}
+
+.home {
+  width: 100%;
+  background: url("20240512_151040.png") center no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+}
+
+.home .tulisan {
+  margin-left: 40px;
+  font-size: 150%;
+  color: aliceblue;
+  width: 600px;
+}
+.home .tulisan h1 {
+  color: bisque;
+}
+
+.home .tulisan p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+}
+
+.profil {
+  background-color: bisque;
+  padding: 40px 0;
+}
+.profil .nama {
+  width: 100%;
+  text-align: center;
+  color: black;
+  margin-top: 20px;
+  font-weight: bolder;
+  font-size: 150%;
+}
+
+.profil .contain {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  justify-content: center;
+}
+.profil img {
+  height: 250px;
+  border-radius: 100%;
+  padding: 10px;
+  margin-right: 15px;
+}
+
+.profil .isi {
+  width: 700px;
+  font-size: 120%;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.profil .isi h1 {
+  margin-bottom: 20px;
+}
+
+.profil .contain .isi p {
+  font-weight: 300;
+}
+
+.prestasi {
+  background-color: black;
+  padding-bottom: 40px;
+}
+.prestasi .nama {
+  text-align: center;
+  padding: 50px;
+  color: bisque;
+  font-size: 150%;
+}
+
+.prestasi .list {
+  color: bisque;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.prestasi .list div {
+  width: 280px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.prestasi .list img {
+  height: 100px;
+  width: 100px;
+}
+
+.hobi {
+  background-color: bisque;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  font-size: 150%;
+}
+
+.hobi .isi h1 {
+  text-decoration: none;
+  color: black;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.hobi .isi a {
+  text-decoration: none;
+  color: bisque;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: black;
+  padding: 15px 30px;
+}
