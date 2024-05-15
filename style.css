@@ -4,25 +4,133 @@
   box-sizing: border-box;
 }
 
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
 html,
 body {
   height: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
 
 .nav .nama {
   padding: 10px 20px;
-  color: bisque;
+  color: #102c57;
   position: fixed;
   z-index: 1001;
-  background-color: black;
+  background-color: #fefaf6;
   width: 100%;
 }
 
 .nav .picit {
   padding: 10px 20px;
-  color: bisque;
+  color: #102c57;
   position: fixed;
   z-index: 1002;
   display: flex;
@@ -32,11 +140,12 @@ body {
   align-items: end;
   float: right;
   width: 100%;
+  margin-top: 10px;
 }
 
 .nav .picit span {
   padding: 1px 8px;
-  background-color: bisque;
+  background-color: #102c57;
   margin: 2px;
 }
 
@@ -48,7 +157,7 @@ body {
   transition: 0.5s ease-in-out;
   display: block;
   position: fixed;
-  background-color: black;
+  background-color: #fefaf6;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -62,54 +171,78 @@ body {
   text-decoration: none;
   font-weight: 600;
   padding: 10px;
-  color: bisque;
+  color: #102c57;
   width: 100%;
   text-align: center;
 }
 
 .navbar a:hover {
-  background-color: bisque;
-  color: black;
+  background-color: #102c57;
+  color: #fefaf6;
   transition: 0.5s ease-in-out;
 }
 
 .home {
   width: 100%;
-  background: url("20240512_151040.png") center no-repeat;
+  background: url("home.png") center no-repeat;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-size: cover;
 }
 
 .home .tulisan {
-  margin-left: 40px;
-  font-size: 150%;
+  font-size: 180%;
+  padding: 20px;
   color: aliceblue;
   width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .home .tulisan h1 {
-  color: bisque;
+  color: #fefaf6;
+  text-align: center;
 }
 
 .home .tulisan p {
   margin-top: 10px;
   font-size: 1.2rem;
   font-weight: 500;
-  color: white;
+  color: #fefaf6;
+  text-align: center;
 }
 
+.home .tulisan a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #102c57;
+  color: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.home .tulisan a:hover {
+  background-color: white;
+  color: #102c57;
+  border: 1px bisque;
+}
 .profil {
-  background-color: bisque;
-  padding: 40px 0;
+  background-color: #fefaf6;
+  padding: 40px 0 50px 0;
 }
 .profil .nama {
   width: 100%;
   text-align: center;
-  color: black;
-  margin-top: 20px;
+  color: #102c57;
+  margin-top: 10px;
   font-weight: bolder;
   font-size: 150%;
+  margin-bottom: 30px;
 }
 
 .profil .contain {
@@ -134,6 +267,7 @@ body {
   font-size: 120%;
   text-align: center;
   padding: 0 20px;
+  color: #102c57;
 }
 
 .profil .isi h1 {
@@ -141,22 +275,23 @@ body {
 }
 
 .profil .contain .isi p {
-  font-weight: 300;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .prestasi {
-  background-color: black;
+  background-color: #102c57;
   padding-bottom: 40px;
 }
 .prestasi .nama {
   text-align: center;
-  padding: 50px;
-  color: bisque;
+  padding: 40px;
+  color: #fefaf6;
   font-size: 150%;
 }
 
 .prestasi .list {
-  color: bisque;
+  color: #fefaf6;
   display: flex;
   flex-wrap: wrap;
   height: auto;
@@ -179,8 +314,12 @@ body {
   width: 100px;
 }
 
+.prestasi .list p {
+  font-weight: 500;
+}
+
 .hobi {
-  background-color: bisque;
+  background-color: #fefaf6;
   display: flex;
   text-align: center;
   align-items: center;
@@ -191,16 +330,38 @@ body {
 
 .hobi .isi h1 {
   text-decoration: none;
-  color: black;
+  color: #102c57;
   padding: 30px;
   border-radius: 10px;
 }
 
 .hobi .isi a {
   text-decoration: none;
-  color: bisque;
+  color: #fefaf6;
   margin: 20px;
   border-radius: 10px;
-  background-color: black;
+  background-color: #102c57;
   padding: 15px 30px;
+}
+
+.hobi .isi a:hover {
+  color: #102c57;
+  background-color: #fefaf6;
+  border: solid 2pt #102c57;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 0.7rem;
+  width: 100%;
+  height: 40px;
+  background-color: #102c57;
+  color: #fefaf6;
+  padding: 10px;
+}
+
+.footer p {
+  text-align: center;
 }
