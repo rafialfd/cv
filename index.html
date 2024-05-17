@@ -30,26 +30,43 @@
 
           <div class="navbar">
             <a href="#home">Home</a>
-            <a href="#profil">Profil</a>
+            <a href="#profil">About Me</a>
             <a href="#prestasi">Prestasi</a>
-            <a href="#hobi">Hobi</a>
+            <a href="#skill">Skill</a>
+            <a href="#contacts">Contact</a>
           </div>
         </div>
 
         <div class="home" id="home">
           <div class="tulisan">
-            <h1>Welcome to Rafiweb.</h1>
-            <p>The website of Rafi Alfirdaus</p>
+            <h1>Welcome.</h1>
+            <p>Ini Rafi, seorang yang gak punya skill bersertifikat.</p>
 
-            <a href="#home">Contact Us</a>
+            <div class="contact">
+              <a href="https://instagram.com/rafialfd" target="_blank"
+                ><i data-feather="instagram"></i
+              ></a>
+              <a
+                href="https://web.facebook.com/profile.php?id=100027013694219"
+                target="_blank"
+                ><i data-feather="facebook"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/channel/UCYDQFgvMuTg4vuLJMfqqkKw"
+                target="_blank"
+                ><i data-feather="youtube"></i
+              ></a>
+              <a href="https://wa.me/6283846263532" target="_blank"
+                ><i data-feather="phone"></i
+              ></a>
+            </div>
           </div>
         </div>
 
         <div class="profil" id="profil">
           <div class="nama">
-            <h1>Profil.</h1>
+            <h1>About Me.</h1>
           </div>
-
           <div class="contain">
             <div class="foto"><img src="profile.png" alt="" /></div>
             <div class="isi">
@@ -74,38 +91,104 @@
 
           <div class="list">
             <div class="pres1">
-              <img src="medal.png" alt="" />
               <h2>Finalis</h2>
               <p>Olimpiade Sains Nasional 2022</p>
             </div>
             <div class="pres2">
-              <img src="medal.png" alt="" />
               <h2>Juara 1</h2>
-              <p>OSN Tingkat Provinsi Kep. Bangka Belitung</p>
+              <p>OSN Tingkat Provinsi Kep. Bangka Belitung 2022</p>
             </div>
             <div class="pres3">
-              <img src="medal.png" alt="" />
               <h2>Juara 1</h2>
-              <p>OSN Tingkat Kabupaten Belitung Timur</p>
+              <p>OSN Tingkat Kabupaten Belitung Timur 2022</p>
             </div>
             <div class="pres4">
-              <img src="medal.png" alt="" />
-              <h2>Juara 3</h2>
-              <p>OSN Tingkat Kabupaten Belitung Timur</p>
+              <span><h2>Juara 3</h2></span>
+              <p>OSN Tingkat Kabupaten Belitung Timur 2023</p>
             </div>
           </div>
         </div>
 
-        <div class="hobi" id="hobi">
-          <div class="isi">
-            <div class="text"><h1>Hobi.......?</h1></div>
-            <div class="tujuan">
-              <a href="https://youtu.be/BIGbQC67moA?si=geocqg8EX_dZA1Db&t=105"
-                >Klik ini</a
-              >
+        <div class="skill" id="skill">
+          <div class="judul"><h1>Skill.</h1></div>
+          <div class="skillnya">
+            <div class="cplus">
+              <img src="cpp.png" alt="" />
+              <div class="exp">
+                <h2>C++</h2>
+                <p>Beginner</p>
+              </div>
+              <div class="titik"></div>
+            </div>
+            <div class="phyton">
+              <img src="py.png" alt="" />
+              <div class="exp">
+                <h2>phyton</h2>
+                <p>Beginner</p>
+              </div>
+              <div class="titik"></div>
+            </div>
+            <div class="HTML">
+              <img src="html.png" alt="" />
+              <div class="exp">
+                <h2>HTML</h2>
+                <p>Beginner</p>
+              </div>
+              <div class="titik"></div>
+            </div>
+            <div class="css">
+              <img src="css.png" alt="" />
+              <div class="exp">
+                <h2>CSS</h2>
+                <p>Beginner</p>
+              </div>
+              <div class="titik"></div>
+            </div>
+            <div class="js">
+              <img src="js.png" alt="" />
+              <div class="exp">
+                <h2>JavaScript</h2>
+                <p>Bro kira dia bisa</p>
+              </div>
+              <div class="titik"></div>
+            </div>
+            <div class="php">
+              <img src="php.png" alt="" />
+              <div class="exp">
+                <h2>PHP</h2>
+                <p>Bro kira dia bisa</p>
+              </div>
+              <div class="titik"></div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="contacts" id="contacts">
+        <h1>Get in Touch.</h1>
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <!-- Replace with your Access Key -->
+          <input
+            type="hidden"
+            name="access_key"
+            value="251fe0a1-7b39-410a-a220-e65aa591ff2e"
+          />
+
+          <!-- Form Inputs. Each input must have a name="" attribute -->
+          <input type="text" name="name" placeholder="Masukkan Nama" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Masukkan Email"
+            required
+          />
+          <textarea name="message" placeholder="Masukkan Pesan"></textarea>
+
+          <!-- hCaptcha Spam Protection -->
+          <div class="h-captcha" data-captcha="true"></div>
+
+          <button type="submit">Submit</button>
+        </form>
       </div>
 
       <div class="footer">
@@ -117,5 +200,10 @@
     </section>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
   </body>
 </html>

@@ -184,7 +184,7 @@ body {
 
 .home {
   width: 100%;
-  background: url("home.png") center no-repeat;
+  background-color: #fefaf6;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -203,7 +203,7 @@ body {
   justify-content: center;
 }
 .home .tulisan h1 {
-  color: #fefaf6;
+  color: #102c57;
   text-align: center;
 }
 
@@ -211,26 +211,23 @@ body {
   margin-top: 10px;
   font-size: 1.2rem;
   font-weight: 500;
-  color: #fefaf6;
+  color: #102c57;
   text-align: center;
 }
 
-.home .tulisan a {
+.home .tulisan .contact {
   text-decoration: none;
   padding: 10px 20px;
-  background-color: #102c57;
-  color: white;
-  margin-top: 20px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 1.2rem;
+  color: #102c57;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.home .tulisan a:hover {
-  background-color: white;
+.home .tulisan .contact a {
   color: #102c57;
-  border: 1px bisque;
+  margin: 5px;
 }
+
 .profil {
   background-color: #fefaf6;
   padding: 40px 0 50px 0;
@@ -263,9 +260,10 @@ body {
 }
 
 .profil .isi {
+  margin-left: 20px;
   width: 700px;
   font-size: 120%;
-  text-align: center;
+  text-align: left;
   padding: 0 20px;
   color: #102c57;
 }
@@ -275,8 +273,11 @@ body {
 }
 
 .profil .contain .isi p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
+  border-left: solid 1px black;
+  background-color: whitesmoke;
+  padding: 10px 20px;
 }
 
 .prestasi {
@@ -309,6 +310,14 @@ body {
   justify-content: center;
   text-align: center;
 }
+
+.prestasi .list div h2 {
+  color: goldenrod;
+}
+
+.prestasi .list div span h2 {
+  color: chocolate;
+}
 .prestasi .list img {
   height: 100px;
   width: 100px;
@@ -318,37 +327,116 @@ body {
   font-weight: 500;
 }
 
-.hobi {
+.skill {
   background-color: #fefaf6;
   display: flex;
+  flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
-  height: 600px;
+  padding: 40px 0px;
   font-size: 150%;
 }
 
-.hobi .isi h1 {
-  text-decoration: none;
+.skill .judul {
   color: #102c57;
-  padding: 30px;
-  border-radius: 10px;
 }
 
-.hobi .isi a {
-  text-decoration: none;
-  color: #fefaf6;
+.skill .skillnya {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+.skill .skillnya div {
+  margin: 10px 20px;
+  color: #102c57;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.skill .skillnya div img {
+  height: 80px;
+}
+.skill .skillnya div p {
+  font-size: 1rem;
+}
+
+.skill .skillnya div .titik {
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  background-color: red;
+}
+
+.skill .skillnya div .exp {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+}
+
+.contacts h1 {
+  color: #102c57;
+  padding: 40px 0px;
+  font-size: 200%;
+}
+
+.contacts form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacts form input,
+textarea {
+  width: 100%;
+  padding: 10px 20px;
+  border: #102c57 solid 1px;
+  border-radius: 10px;
   margin: 20px;
-  border-radius: 10px;
-  background-color: #102c57;
-  padding: 15px 30px;
+  resize: none;
 }
 
-.hobi .isi a:hover {
-  color: #102c57;
-  background-color: #fefaf6;
-  border: solid 2pt #102c57;
+.contacts form textarea {
+  height: 400px;
 }
+.contacts .h-captcha data-captcha {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacts button {
+  margin-top: 20px;
+  width: 100px;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: #102c57;
+  cursor: pointer;
+  color: #fefaf6;
+}
+
 .footer {
   display: flex;
   align-items: center;
