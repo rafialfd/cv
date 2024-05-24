@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Game</title>
+    <link rel="stylesheet" href="game.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="title">
+          <h1>Number Game</h1>
+        </div>
+        <div class="pertanyaan">
+          <form id="formnya">
+            <p id="angka1"></p>
+            <p>+</p>
+            <p id="angka2"></p>
+          </form>
+          <p id="ans"></p>
+
+          <p>Correct Streak</p>
+          <p id="score"></p>
+        </div>
+
+        <div class="jawaban">
+          <input autofocus id="jawaban" type="number" />
+          <button type="submit" id="kir" onclick="jawab()">Kirim</button>
+        </div>
+      </div>
+    </section>
+    <script src="game.js"></script>
+  </body>
+</html>
