@@ -163,10 +163,13 @@ body {
 }
 .pengumuman .content .img {
   width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pengumuman .content .img img {
-  width: 700px;
+  width: 500px;
 }
 .pengumuman .content .list {
   width: 600px;
