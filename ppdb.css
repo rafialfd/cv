@@ -169,7 +169,7 @@ body {
 }
 
 .pengumuman .content .img img {
-  width: 500px;
+  width: 100%;
 }
 .pengumuman .content .list {
   width: 600px;
