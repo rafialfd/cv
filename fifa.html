@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIFA Points Calculator</title>
+    <link rel="stylesheet" href="fifa.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <!-- selecting team -->
+        <div class="team">
+          <div class="team-a" id="team-a">
+            <select id="teamslctd-a">
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="vs">
+            <h1>VS</h1>
+          </div>
+          <div class="team-b" id="team-b">
+            <select id="teamslctd-b">
+              <option value=""></option>
+            </select>
+          </div>
+        </div>
+
+        <!-- selecting weight -->
+        <div class="weight">
+          <div class="urgent">
+            <select id="value">
+              <option value=""></option>
+            </select>
+          </div>
+        </div>
+
+        <!-- result -->
+        <div class="result">
+          <div class="a-win">
+            <h3>If <span id="a-name"></span> win</h3>
+            <p><span id="a-names1"></span>: <span id="a-win"></span></p>
+            <p><span id="b-names1"></span>: <span id="b-lose"></span></p>
+          </div>
+          <div class="draw">
+            <h3>Draw</h3>
+            <p><span id="draw-home"></span>: <span id="home-res"></span></p>
+            <p><span id="draw-away"></span>: <span id="away-res"></span></p>
+          </div>
+
+          <div class="b-win">
+            <h3>If <span id="b-name"></span> win</h3>
+            <p><span id="b-names"></span>: <span id="b-win"></span></p>
+            <p><span id="a-names"></span>: <span id="a-lose"></span></p>
+          </div>
+        </div>
+
+        <div class="update">
+          <h4>updated: 08 June 2024</h4>
+        </div>
+      </div>
+    </section>
+    <script src="fifa.js"></script>
+  </body>
+</html>
