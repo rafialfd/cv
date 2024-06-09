@@ -5,21 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FIFA Points Calculator</title>
     <link rel="stylesheet" href="fifa.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <section>
       <div class="container">
+        <div class="title">
+          <div class="text">
+            <h1>FIFA Points Calculator</h1>
+          </div>
+          <div class="logo">
+            <img src="FIFA.png" alt="" />
+          </div>
+        </div>
         <!-- selecting team -->
         <div class="team">
           <div class="team-a" id="team-a">
+            <div class="name"><h4>Team 1</h4></div>
             <select id="teamslctd-a">
               <option value=""></option>
             </select>
           </div>
-          <div class="vs">
-            <h1>VS</h1>
-          </div>
+
           <div class="team-b" id="team-b">
+            <div class="name"><h4>Team 2</h4></div>
             <select id="teamslctd-b">
               <option value=""></option>
             </select>
@@ -29,6 +43,7 @@
         <!-- selecting weight -->
         <div class="weight">
           <div class="urgent">
+            <div class="name"><h4>Importance</h4></div>
             <select id="value">
               <option value=""></option>
             </select>
@@ -56,7 +71,7 @@
         </div>
 
         <div class="update">
-          <h4>updated: 08 June 2024</h4>
+          <h4>Rank updated: April 04, 2024</h4>
         </div>
       </div>
     </section>
