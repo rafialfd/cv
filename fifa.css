@@ -7,13 +7,16 @@
 
 section {
   width: 100%;
-  margin: 100px 0;
+  height: 165vh;
+  padding: 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(to bottom right, #2f5cff, #dbf4ff);
 }
 
 .container {
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,6 +45,7 @@ section {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin: 20px 0;
 }
 
 .team .team-a select,
@@ -51,10 +55,10 @@ section {
   appearance: none;
   padding: 10px 20px;
   border-radius: 10px;
-  background-color: #005391;
-  color: white;
+  background-color: #dbf4ff;
+  color: #2f5cff;
   outline: none;
-  margin: 20px;
+  margin: 10px;
   font-weight: 600;
   text-align: center;
 }
@@ -77,11 +81,12 @@ section {
   appearance: none;
   padding: 10px 20px;
   border-radius: 10px;
-  background-color: #005391;
+  background-color: #dbf4ff;
   font-weight: 500;
   text-align: center;
-  color: white;
+  color: #2f5cff;
   outline: none;
+  margin-bottom: 10px;
 }
 
 .result {
@@ -95,6 +100,9 @@ section {
   margin: 20px;
 }
 
+.result h3 {
+  color: #2f5cff;
+}
 .result div {
   margin: 10px;
   width: 300px;

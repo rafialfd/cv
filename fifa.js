@@ -2,7 +2,6 @@ let teamslctda = document.getElementById("teamslctd-a");
 let teamslctdb = document.getElementById("teamslctd-b");
 let awin = document.getElementById("a-win");
 let bwin = document.getElementById("b-win");
-
 const teams = [
   { name: "Afghanistan", points: 1036.92 },
   { name: "Albania", points: 1375.1 },
@@ -215,7 +214,6 @@ const teams = [
   { name: "Zambia", points: 1278.26 },
   { name: "Zimbabwe", points: 1143.66 },
 ];
-
 teams.forEach((team) => {
   let x = document.createElement("option");
   x.text = team.name;
@@ -230,9 +228,6 @@ teams.forEach((tema) => {
   y.value = tema.points;
   teamslctdb.appendChild(y);
 });
-teamslctda.ready = function () {
-  document.getElementById("a-name").selectize;
-};
 
 teamslctda.onchange = function () {
   points1 = 0;
@@ -254,6 +249,10 @@ teamslctda.onchange = function () {
     teamslctda.options[teamslctda.selectedIndex].textContent;
   document.getElementById("draw-away").innerText =
     teamslctdb.options[teamslctdb.selectedIndex].textContent;
+
+  document.getElementById("poinnya1").innerText = teamslctda.value;
+  document.getElementById("poinnya2").innerText = teamslctdb.value;
+
   // deklarasi tim
   firstteam = parseFloat(teamslctda.value);
   secondteam = parseFloat(teamslctdb.value);
@@ -273,15 +272,127 @@ teamslctda.onchange = function () {
     points3 = berat * (0.5 - wepoint);
     points4 = berat * (0.5 - wepoint1);
   }
+  // rank awal
+  ran1 = firstteam;
+  ran2 = secondteam;
+  ran3 = firstteam;
+  ran4 = secondteam;
+  ran5 = firstteam;
+  ran6 = secondteam;
+  coun1 = 1;
+  coun2 = 1;
+  coun3 = 1;
+  coun4 = 1;
+  coun5 = 1;
+  coun6 = 1;
+  teams.forEach((teal) => {
+    if (ran1 < teal.points) {
+      coun1 += 1;
+    }
+    if (ran2 < teal.points) {
+      coun2 += 1;
+    }
+    if (ran3 < teal.points) {
+      coun3 += 1;
+    }
+    if (ran4 < teal.points) {
+      coun4 += 1;
+    }
+    if (ran5 < teal.points) {
+      coun5 += 1;
+    }
+    if (ran6 < teal.points) {
+      coun6 += 1;
+    }
+  });
+
+  //rank id
+  document.getElementById("rank1").innerText = coun1;
+  document.getElementById("rank2").innerText = coun2;
+
+  //perubahan rank
+  rank1 = firstteam + points1;
+  rank2 = secondteam + points2;
+  rank3 = firstteam + points3;
+  rank4 = secondteam + points4;
+  rank5 = firstteam + -1 * points2;
+  rank6 = secondteam + -1 * points1;
+  count1 = 1;
+  count2 = 1;
+  if (points3 < 0) {
+    count3 = 0;
+    count4 = 1;
+  } else if (points4 < 0) {
+    count3 = 1;
+    count4 = 0;
+  }
+
+  count5 = 0;
+  count6 = 0;
+  teams.forEach((tear) => {
+    if (rank1 < tear.points) {
+      count1 += 1;
+    }
+    if (rank2 < tear.points) {
+      count2 += 1;
+    }
+    if (rank3 < tear.points) {
+      count3 += 1;
+    }
+    if (rank4 < tear.points) {
+      count4 += 1;
+    }
+    if (rank5 < tear.points) {
+      count5 += 1;
+    }
+    if (rank6 < tear.points) {
+      count6 += 1;
+    }
+  });
 
   // hasil
-  document.getElementById("a-win").innerText = points1.toFixed(2);
-  document.getElementById("b-win").innerText = points2.toFixed(2);
-  document.getElementById("home-res").innerText = points3.toFixed(2);
-  document.getElementById("away-res").innerText = points4.toFixed(2);
-
-  document.getElementById("a-lose").innerText = (-1 * points2).toFixed(2);
-  document.getElementById("b-lose").innerText = (-1 * points1).toFixed(2);
+  document.getElementById("a-win").innerText =
+    (firstteam + points1).toFixed(2) +
+    " (+" +
+    points1.toFixed(2) +
+    ")" +
+    " " +
+    (coun1 - count1);
+  document.getElementById("b-win").innerText =
+    (secondteam + points2).toFixed(2) +
+    " (+" +
+    points2.toFixed(2) +
+    ")" +
+    " " +
+    (coun2 - count2);
+  document.getElementById("home-res").innerText =
+    (firstteam + points3).toFixed(2) +
+    " (" +
+    points3.toFixed(2) +
+    ")" +
+    " " +
+    (coun3 - count3);
+  document.getElementById("away-res").innerText =
+    (secondteam + points4).toFixed(2) +
+    " (" +
+    points4.toFixed(2) +
+    ")" +
+    " " +
+    (coun4 - count4);
+  document.getElementById("a-lose").innerText =
+    (firstteam + -1 * points2).toFixed(2) +
+    " (" +
+    -1 * points2.toFixed(2) +
+    ")" +
+    " " +
+    (coun5 - count5);
+  document.getElementById("b-lose").innerText =
+    (secondteam + -1 * points1).toFixed(2) +
+    " (" +
+    -1 * points1.toFixed(2) +
+    ")" +
+    " " +
+    (coun6 - count6);
 };
 
 teamslctdb.onchange = function () {
@@ -304,6 +415,8 @@ teamslctdb.onchange = function () {
     teamslctda.options[teamslctda.selectedIndex].textContent;
   document.getElementById("draw-away").innerText =
     teamslctdb.options[teamslctdb.selectedIndex].textContent;
+  document.getElementById("poinnya1").innerText = teamslctda.value;
+  document.getElementById("poinnya2").innerText = teamslctdb.value;
   // deklarasi tim
   firstteam = parseFloat(teamslctda.value);
   secondteam = parseFloat(teamslctdb.value);
@@ -324,14 +437,127 @@ teamslctdb.onchange = function () {
     points4 = berat * (0.5 - wepoint1);
   }
 
-  // hasil
-  document.getElementById("a-win").innerText = points1.toFixed(2);
-  document.getElementById("b-win").innerText = points2.toFixed(2);
-  document.getElementById("home-res").innerText = points3.toFixed(2);
-  document.getElementById("away-res").innerText = points4.toFixed(2);
+  // rank awal
+  ran1 = firstteam;
+  ran2 = secondteam;
+  ran3 = firstteam;
+  ran4 = secondteam;
+  ran5 = firstteam;
+  ran6 = secondteam;
+  coun1 = 1;
+  coun2 = 1;
+  coun3 = 1;
+  coun4 = 1;
+  coun5 = 1;
+  coun6 = 1;
+  teams.forEach((teal) => {
+    if (ran1 < teal.points) {
+      coun1 += 1;
+    }
+    if (ran2 < teal.points) {
+      coun2 += 1;
+    }
+    if (ran3 < teal.points) {
+      coun3 += 1;
+    }
+    if (ran4 < teal.points) {
+      coun4 += 1;
+    }
+    if (ran5 < teal.points) {
+      coun5 += 1;
+    }
+    if (ran6 < teal.points) {
+      coun6 += 1;
+    }
+  });
 
-  document.getElementById("a-lose").innerText = (-1 * points2).toFixed(2);
-  document.getElementById("b-lose").innerText = (-1 * points1).toFixed(2);
+  //rank id
+  document.getElementById("rank1").innerText = coun1;
+  document.getElementById("rank2").innerText = coun2;
+
+  //perubahan rank
+  rank1 = firstteam + points1;
+  rank2 = secondteam + points2;
+  rank3 = firstteam + points3;
+  rank4 = secondteam + points4;
+  rank5 = firstteam + -1 * points2;
+  rank6 = secondteam + -1 * points1;
+  count1 = 1;
+  count2 = 1;
+  if (points3 < 0) {
+    count3 = 0;
+    count4 = 1;
+  } else if (points4 < 0) {
+    count3 = 1;
+    count4 = 0;
+  }
+
+  count5 = 0;
+  count6 = 0;
+  teams.forEach((tear) => {
+    if (rank1 < tear.points) {
+      count1 += 1;
+    }
+    if (rank2 < tear.points) {
+      count2 += 1;
+    }
+    if (rank3 < tear.points) {
+      count3 += 1;
+    }
+    if (rank4 < tear.points) {
+      count4 += 1;
+    }
+    if (rank5 < tear.points) {
+      count5 += 1;
+    }
+    if (rank6 < tear.points) {
+      count6 += 1;
+    }
+  });
+
+  // hasil
+  document.getElementById("a-win").innerText =
+    (firstteam + points1).toFixed(2) +
+    " (+" +
+    points1.toFixed(2) +
+    ")" +
+    " " +
+    (coun1 - count1);
+  document.getElementById("b-win").innerText =
+    (secondteam + points2).toFixed(2) +
+    " (+" +
+    points2.toFixed(2) +
+    ")" +
+    " " +
+    (coun2 - count2);
+  document.getElementById("home-res").innerText =
+    (firstteam + points3).toFixed(2) +
+    " (" +
+    points3.toFixed(2) +
+    ")" +
+    " " +
+    (coun3 - count3);
+  document.getElementById("away-res").innerText =
+    (secondteam + points4).toFixed(2) +
+    " (" +
+    points4.toFixed(2) +
+    ")" +
+    " " +
+    (coun4 - count4);
+  document.getElementById("a-lose").innerText =
+    (firstteam + -1 * points2).toFixed(2) +
+    " (" +
+    -1 * points2.toFixed(2) +
+    ")" +
+    " " +
+    (coun5 - count5);
+  document.getElementById("b-lose").innerText =
+    (secondteam + -1 * points1).toFixed(2) +
+    " (" +
+    -1 * points1.toFixed(2) +
+    ")" +
+    " " +
+    (coun6 - count6);
 };
 
 const weights = [
@@ -381,6 +607,8 @@ value.onchange = function () {
   points1 = 0;
 
   // penamaan
+  document.getElementById("importance").innerText = value.value;
+
   document.getElementById("a-name").innerText =
     teamslctda.options[teamslctda.selectedIndex].textContent;
   document.getElementById("b-name").innerText =
@@ -397,6 +625,8 @@ value.onchange = function () {
     teamslctda.options[teamslctda.selectedIndex].textContent;
   document.getElementById("draw-away").innerText =
     teamslctdb.options[teamslctdb.selectedIndex].textContent;
+  document.getElementById("poinnya1").innerText = teamslctda.value;
+  document.getElementById("poinnya2").innerText = teamslctdb.value;
   // deklarasi tim
   firstteam = parseFloat(teamslctda.value);
   secondteam = parseFloat(teamslctdb.value);
@@ -417,12 +647,125 @@ value.onchange = function () {
     points4 = berat * (0.5 - wepoint1);
   }
 
-  // hasil
-  document.getElementById("a-win").innerText = points1.toFixed(2);
-  document.getElementById("b-win").innerText = points2.toFixed(2);
-  document.getElementById("home-res").innerText = points3.toFixed(2);
-  document.getElementById("away-res").innerText = points4.toFixed(2);
+  // rank awal
+  ran1 = firstteam;
+  ran2 = secondteam;
+  ran3 = firstteam;
+  ran4 = secondteam;
+  ran5 = firstteam;
+  ran6 = secondteam;
+  coun1 = 1;
+  coun2 = 1;
+  coun3 = 1;
+  coun4 = 1;
+  coun5 = 1;
+  coun6 = 1;
+  teams.forEach((teal) => {
+    if (ran1 < teal.points) {
+      coun1 += 1;
+    }
+    if (ran2 < teal.points) {
+      coun2 += 1;
+    }
+    if (ran3 < teal.points) {
+      coun3 += 1;
+    }
+    if (ran4 < teal.points) {
+      coun4 += 1;
+    }
+    if (ran5 < teal.points) {
+      coun5 += 1;
+    }
+    if (ran6 < teal.points) {
+      coun6 += 1;
+    }
+  });
 
-  document.getElementById("a-lose").innerText = (-1 * points2).toFixed(2);
-  document.getElementById("b-lose").innerText = (-1 * points1).toFixed(2);
+  //rank id
+  document.getElementById("rank1").innerText = coun1;
+  document.getElementById("rank2").innerText = coun2;
+
+  //perubahan rank
+  rank1 = firstteam + points1;
+  rank2 = secondteam + points2;
+  rank3 = firstteam + points3;
+  rank4 = secondteam + points4;
+  rank5 = firstteam + -1 * points2;
+  rank6 = secondteam + -1 * points1;
+  count1 = 1;
+  count2 = 1;
+  if (points3 < 0) {
+    count3 = 0;
+    count4 = 1;
+  } else if (points4 < 0) {
+    count3 = 1;
+    count4 = 0;
+  }
+
+  count5 = 0;
+  count6 = 0;
+  teams.forEach((tear) => {
+    if (rank1 < tear.points) {
+      count1 += 1;
+    }
+    if (rank2 < tear.points) {
+      count2 += 1;
+    }
+    if (rank3 < tear.points) {
+      count3 += 1;
+    }
+    if (rank4 < tear.points) {
+      count4 += 1;
+    }
+    if (rank5 < tear.points) {
+      count5 += 1;
+    }
+    if (rank6 < tear.points) {
+      count6 += 1;
+    }
+  });
+
+  // hasil
+  document.getElementById("a-win").innerText =
+    (firstteam + points1).toFixed(2) +
+    " (+" +
+    points1.toFixed(2) +
+    ")" +
+    " " +
+    (coun1 - count1);
+  document.getElementById("b-win").innerText =
+    (secondteam + points2).toFixed(2) +
+    " (+" +
+    points2.toFixed(2) +
+    ")" +
+    " " +
+    (coun2 - count2);
+  document.getElementById("home-res").innerText =
+    (firstteam + points3).toFixed(2) +
+    " (" +
+    points3.toFixed(2) +
+    ")" +
+    " " +
+    (coun3 - count3);
+  document.getElementById("away-res").innerText =
+    (secondteam + points4).toFixed(2) +
+    " (" +
+    points4.toFixed(2) +
+    ")" +
+    " " +
+    (coun4 - count4);
+  document.getElementById("a-lose").innerText =
+    (firstteam + -1 * points2).toFixed(2) +
+    " (" +
+    -1 * points2.toFixed(2) +
+    ")" +
+    " " +
+    (coun5 - count5);
+  document.getElementById("b-lose").innerText =
+    (secondteam + -1 * points1).toFixed(2) +
+    " (" +
+    -1 * points1.toFixed(2) +
+    ")" +
+    " " +
+    (coun6 - count6);
 };
