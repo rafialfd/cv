@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section>
+      <div class="container" id="container">
+        <div class="title">
+          <h1>Cek Khodam Online</h1>
+        </div>
+        <div class="input">
+          <input type="text" placeholder="Tuliskan Namamu" id="input" />
+        </div>
+        <div class="button">
+          <button onclick="picit()" id="picit">Terawang</button>
+        </div>
+      </div>
+
+      <div class="hasil" id="hasil">
+        <div class="h3">
+          <h3>
+            <span id="name"></span>, Khodam yang ada dalam diri kamu adalah:
+          </h3>
+        </div>
+        <div class="khodam">
+          <h1 id="khodam"></h1>
+        </div>
+        <div class="desc">
+          <p>Hati-hati dalam menggunakan khodam anda.</p>
+        </div>
+        <button id="se" onclick="location.reload()">Cek Lagi</button>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
