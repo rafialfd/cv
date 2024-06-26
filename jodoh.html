@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cek JODOH!</title>
+    <link rel="stylesheet" href="jodoh.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="title">
+          <h1>Kalkulator Jodoh</h1>
+          <p>Kalkulator jodoh paling akurat.</p>
+        </div>
+
+        <div class="input" id="isi">
+          <div class="namaatas">
+            <p>Nama Anda</p>
+            <input type="text" />
+          </div>
+          <div class="namabawah">
+            <p>Nama Pasangan Anda</p>
+            <input type="text" />
+          </div>
+        </div>
+
+        <div class="hasil" id="hasil">
+          <p>Peluang Jodoh Anda:</p>
+          <h1 id="resper">-1%</h1>
+          <p>Tidak apa, jodoh takkan kemana.</p>
+        </div>
+
+        <div class="submit" id="fsub">
+          <button onclick="result()">Jodoh?</button>
+        </div>
+
+        <div class="submit-result" id="asub">
+          <button onclick="location.reload()">Coba dengan yang lain?</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="jodoh.js"></script>
+  </body>
+</html>

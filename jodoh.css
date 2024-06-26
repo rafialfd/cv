@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+section {
+  background-color: #d34042;
+
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 60px 30px;
+  color: white;
+  background-color: #460909;
+
+  border-radius: 10px;
+}
+
+.container .title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container .input {
+  margin: 10px 0;
+}
+.container .hasil {
+  display: none;
+}
+
+.container .submit {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.container .submit button {
+  width: 100%;
+  border: none;
+  background-color: #d34042;
+  color: white;
+  padding: 10px 0;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.container .submit-result {
+  display: none;
+}
+
+#asub button {
+  width: 100%;
+  border: none;
+  background-color: #d34042;
+  color: white;
+  padding: 10px 0;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.hasil {
+  text-align: center;
+}
+
+.hasil h1 {
+  font-size: 4rem;
+}
+
+.input input {
+  background-color: #460909;
+  padding: 10px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-bottom: solid 1pt white;
+  margin: 5px 0;
+  width: 100%;
+}
+
+.input div {
+  margin: 10px 0;
+}
