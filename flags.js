@@ -385,7 +385,7 @@ let array = new Array(187).fill(true);
 let random = Math.floor(Math.random() * 187);
 array[random] = false;
 let myImage = new Image();
-myImage.src = "img/" + codePng[random] + ".png";
+myImage.src = codePng[random] + ".png";
 x = document.getElementById("random");
 x.appendChild(myImage);
 
@@ -406,14 +406,14 @@ function jawab() {
       random = Math.floor(Math.random() * 187);
       console.log(random);
       let myImage = new Image();
-      myImage.src = "img/" + codePng[random] + ".png";
+      myImage.src = codePng[random] + ".png";
       y = document.getElementById("random");
       y.innerHTML = "";
       y.appendChild(myImage);
     } else {
       console.log(random);
       let myImage = new Image();
-      myImage.src = "img/" + codePng[random] + ".png";
+      myImage.src = codePng[random] + ".png";
       y = document.getElementById("random");
       y.innerHTML = "";
       y.appendChild(myImage);
