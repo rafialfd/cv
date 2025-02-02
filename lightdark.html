@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch</title>
+    <link rel="stylesheet" href="lightdark.css" />
+  </head>
+  <body id="body">
+    <div class="switch">
+      <h1 id="title">Light Mode</h1>
+      <h5>Press Switch to Change Mode</h5>
+      <button id="button" onclick="change()">Switch</button>
+      <div id="ganti" class="ganti" onclick="change()">
+        <div id="saklar" class="saklar"></div>
+      </div>
+    </div>
+    <script>
+      x = 0;
+      function change() {
+        if (x == 0) {
+          document.getElementById("body").style.backgroundColor = "black";
+          document.getElementById("body").style.color = "white";
+          document.getElementById("button").style.backgroundColor = "white";
+          document.getElementById("button").style.color = "black";
+          document.getElementById("ganti").style.backgroundColor = "white";
+          document.getElementById("saklar").style.backgroundColor = "black";
+          document.getElementById("ganti").style.justifyContent = "right";
+          document.getElementById("title").innerHTML = "Nigga Mode";
+          x = 1;
+        } else if (x == 1) {
+          document.getElementById("body").style.backgroundColor = "white";
+          document.getElementById("button").style.backgroundColor = "black";
+          document.getElementById("button").style.color = "white";
+          document.getElementById("ganti").style.backgroundColor = "black";
+          document.getElementById("saklar").style.backgroundColor = "white";
+          document.getElementById("ganti").style.justifyContent = "left";
+
+          document.getElementById("title").innerHTML = "Light Mode";
+          document.getElementById("body").style.color = "black";
+          x = 0;
+        }
+      }
+    </script>
+  </body>
+</html>
