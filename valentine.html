@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hehehe...</title>
+    <style>
+      * {
+        font-family: Poppins;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: pink;
+      }
+      .default {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        color: blueviolet;
+        width: 60%;
+      }
+      .yes {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        width: 60%;
+        color: blueviolet;
+      }
+      .button button {
+        margin: 10px;
+      }
+      #ya {
+        border: none;
+        background-color: green;
+        padding: 10px 30px;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      #no {
+        border: none;
+        background-color: red;
+        padding: 10px 30px;
+        color: white;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="default" id="default">
+      <h1>Mau kah kamu menjadi Valentineku?</h1>
+      <img
+        src="LINE Official Stickers - BugCat-Capo_ What to eat_ Example with GIF Animation.gif"
+        width="200px"
+      />
+      <div class="button">
+        <button id="ya" onclick="yes()">Iya mau!</button
+        ><button id="no" onclick="klik()">Ngga</button>
+      </div>
+    </div>
+    <div class="yes" id="yes">
+      <h1>Horeeeeee :))))</h1>
+      <img
+        src="LINE Official Stickers - BugCat-Capo_ What to eat_ Example with GIF Animation.gif"
+        width="200px"
+      />
+    </div>
+    <script>
+      tinggi = 10;
+      lebar = 30;
+      counter = 0;
+      function klik() {
+        tinggi *= 10;
+        lebar *= 10;
+        document.getElementById("no").innerHTML = "Beneran ngga mau? :(";
+        document.getElementById("ya").style.padding =
+          tinggi + "px " + lebar + "px";
+        tinggi *= 10;
+        lebar *= 10;
+      }
+      function yes() {
+        document.getElementById("default").style.display = "none";
+        document.getElementById("yes").style.display = "flex";
+      }
+    </script>
+  </body>
+</html>
