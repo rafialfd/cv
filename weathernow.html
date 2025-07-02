@@ -151,7 +151,7 @@ document.getElementById("lokasi").addEventListener("keydown", (e) => {
   const inputValue = e.target.value.trim();
   document.getElementById('dropdown').style.display = "flex";
 
-  fetch(`http://api.weatherapi.com/v1/search.json?key=${API}&q=${inputValue}`)
+  fetch(`https://api.weatherapi.com/v1/search.json?key=${API}&q=${inputValue}`)
   .then((response) => response.json())
   .then((data) => {
       let html = "";
@@ -181,7 +181,7 @@ document.getElementById("lokasi").addEventListener("keydown", (e) => {
       const stats = document.getElementById("stats");
 
       fetch(
-        `http://api.weatherapi.com/v1/current.json?key=${API}&q=${lokasi}&aqi=yes`
+        `https://api.weatherapi.com/v1/current.json?key=${API}&q=${lokasi}&aqi=yes`
       )
         .then((response) => response.json())
         .then((data) => {
