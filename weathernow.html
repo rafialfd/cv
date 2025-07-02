@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherNow.</title>
+  </head>
+  <body> 
+    <div class="content">
+      <h1>WeatherNow.</h1>
+      
+      <div class="searchbar">
+      <input id="lokasi" type="text" placeholder="Search Your Location" />
+        <div class="dropdown" id="dropdown">
+          <p id="saran"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="right" id="right">
+      <div class="box" id="box">
+        <div class="city" id="city"></div>
+        <div class="weather" id="weather">
+          <div class="weather-icon" id="weather-icon"></div>
+          <div class="weather-detail" id="weather-detail"></div>
+        </div>
+        <div class="stats" id="stats"></div>
+      </div>
+      <div class="close" id="close" onclick="tutup()"><h5>X</h5></div>
+    </div>
+  </body>
+</div>
+
+  <style>
+    * {
+      font-family: 'Poppins';
+    }
+    body {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .content {
+      display: flex;
+      margin: 10px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 400px;
+      width: 400px;
+    }
+    .right {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .close {
+       width: 290px;
+      background-color: grey;
+      color: white;
+      border-radius: 10px;
+      text-align: center;
+      margin: 5px 0;
+    }
+    .close:hover {
+      cursor: pointer;
+    }
+    .searchbar {
+      width: 80%;
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+
+    }
+    .city {text-align: center;}
+    .box {
+      width: 250px;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 10px 20px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      background-color: white;
+    }
+
+    #lokasi {
+      width: 70%;
+      height: 30px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .dropdown {
+    background-color: #f1f1f1;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 70%;
+  text-align: center; z-index: 1000; display: none;
+  flex-direction: column; overflow-y: auto;  top: 100%;
+}
+.weather {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats p {
+  border-bottom: .01px solid grey;
+  padding-bottom: 4px;
+}
+
+.dropdown p {cursor: pointer; background-color: white; display: absolute;}
+.dropdown p:hover {background-color: blue; color: white;}
+input #lokasi {      text-align: center;}
+.hasil {background-color: white; display: flex; align-items: center; justify-content: center; flex-wrap: wrap;}
+.cuaca,.detail, .fix {width: 400px;display: flex; align-items: center; justify-content: center;}
+  .fix  {display: flex; flex-direction: column;} .suhu {display: flex;}
+.text {display: block;}
+
+</style>
+  <script>
+    const API = "77d775e6c34540f296733517253006";
+
+// ENTER INPUT
+document.getElementById("lokasi").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    const inputValue = e.target.value.trim();
+    data(inputValue);
+  }
+});
+
+  //SEARCH
+  document.getElementById("lokasi").addEventListener("input", (e) => {
+  const saranList = document.getElementById("saran");
+  const inputValue = e.target.value.trim();
+  document.getElementById('dropdown').style.display = "flex";
+
+  fetch(`http://api.weatherapi.com/v1/search.json?key=${API}&q=${inputValue}`)
+  .then((response) => response.json())
+  .then((data) => {
+      let html = "";
+      data.forEach((kota) => {
+        html += `<p onclick="data('${kota.name}')">${kota.name}, ${kota.country}</p>`;
+      });
+      saranList.innerHTML = html;})
+  });
+
+  //CLOSE
+  function tutup() {
+      document.getElementById('right').style.display = 'none';
+      console.log(1);
+  }
+
+  //WEATHER DATA
+    function data(lokasi) {
+      document.getElementById('right').style.display = 'flex';
+      const saranList = document.getElementById("saran");
+      saranList.innerHTML = "";
+  document.getElementById('dropdown').style.display = "none";
+
+      document.getElementById("lokasi").value = "";
+      const city = document.getElementById("city");
+      const weather_icon = document.getElementById("weather-icon");
+      const weather_detail = document.getElementById("weather-detail");
+      const stats = document.getElementById("stats");
+
+      fetch(
+        `http://api.weatherapi.com/v1/current.json?key=${API}&q=${lokasi}&aqi=yes`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          city.innerHTML = `<h3>${data.location.name}, ${data.location.country}</h3>`;
+
+          weather_icon.innerHTML = `
+          <img src="${data.current.condition.icon}" height="100"></img>`;
+
+          weather_detail.innerHTML = `
+          <p> ${data.current.condition.text}  <br> ${data.current.temp_c}°C </p>`;
+
+          
+          stats.innerHTML = `
+           <p>Feels Like: ${data.current.feelslike_c}°C</p>
+           <p>Wind Speed: ${data.current.wind_kph} kph</p>
+           <p>Humidity: ${data.current.humidity}%</p>
+           <p>Last Updated: ${data.current.last_updated}</p>
+           `;
+        });
+    }
+  </script>
+</html>
