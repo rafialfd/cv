@@ -182,7 +182,7 @@ document.getElementById("lokasi").addEventListener("keydown", (e) => {
 
       fetch(
         `https://api.weatherapi.com/v1/current.json?key=${API}&q=${lokasi}&aqi=yes`
-      )
+      ) 
         .then((response) => response.json())
         .then((data) => {
           city.innerHTML = `<h3>${data.location.name}, ${data.location.country}</h3>`;
