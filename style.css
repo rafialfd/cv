@@ -389,6 +389,12 @@ body {
   background-position: center;
 }
 
+#wikispeed {
+  background-image: url("wikispeed-page.PNG");
+  background-size: cover;
+  background-position: center;
+}
+
 .myproject .card-list .card .title {
   font-weight: bold;
   font-size: 20px;
