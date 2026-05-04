@@ -7,10 +7,11 @@
 
 section {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 100px 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-image: linear-gradient(to bottom right, #2f5cff, #dbf4ff);
 }
 
@@ -20,7 +21,6 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
 }
 
 .title .text {
